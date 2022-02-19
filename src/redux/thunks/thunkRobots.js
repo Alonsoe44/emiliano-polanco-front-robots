@@ -19,6 +19,6 @@ export const createRobotThunk = (robot) => async (dispatch) => {
 
   if (response.ok) {
     const receibedRobot = await response.json();
-    dispatch(createRobotAction(receibedRobot));
+    dispatch(createRobotAction(receibedRobot.robots));
   }
 };
