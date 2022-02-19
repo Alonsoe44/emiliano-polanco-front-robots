@@ -14,7 +14,6 @@ function App() {
     return state.robots;
   });
 
-  console.log(robots);
   return (
     <div className="App">
       <h1>{robots}</h1>
