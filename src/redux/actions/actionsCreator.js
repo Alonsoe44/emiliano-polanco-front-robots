@@ -1,8 +1,6 @@
 import actionTypeRobots from "./actionTypeRobots";
 
-export const loadRobotsAction = (robots) => ({
+export const loadRobotsAction = (robotsPayload) => ({
   type: actionTypeRobots.loadRobots,
-  robots,
+  robots: robotsPayload,
 });
-
-export const a = 4;

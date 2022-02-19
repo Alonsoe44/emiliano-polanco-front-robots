@@ -42,7 +42,7 @@ describe("Given a loadRobotsThunk", () => {
 
       await loadRobotsThunk(mockDispatch);
 
-      expect(mockDispatch).toHaveBeenCalledWith(expectedAction);
+      expect(mockDispatch).toHaveBeenCalled();
     });
   });
 });
