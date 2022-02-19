@@ -39,42 +39,44 @@ describe("Given a robotsReduce", () => {
 
   describe("When it called with 2 robots and an loadaction with a payload of 3 robots", () => {
     test("Then it should return a new group of  the 3 robots of the payload", () => {
-      const robotsPayload = [
-        {
-          name: "Robocop",
-          image: "iouhdfoiuhdfs",
-          statistics: {
-            velocity: 8,
-            endurance: 3,
-            creationDate: 2018,
+      const robotsPayload = {
+        robots: [
+          {
+            name: "Robocop",
+            image: "iouhdfoiuhdfs",
+            statistics: {
+              velocity: 8,
+              endurance: 3,
+              creationDate: 2018,
+            },
           },
-        },
-        {
-          name: "Robofe",
-          image: "iouhfsefhdfs",
-          statistics: {
-            velocity: 2,
-            endurance: 7,
-            creationDate: 2046,
+          {
+            name: "Robofe",
+            image: "iouhfsefhdfs",
+            statistics: {
+              velocity: 2,
+              endurance: 7,
+              creationDate: 2046,
+            },
           },
-        },
-        {
-          name: "Robofe",
-          image: "iouhfsefhdfs",
-          statistics: {
-            velocity: 2,
-            endurance: 7,
-            creationDate: 2046,
+          {
+            name: "Robofe",
+            image: "iouhfsefhdfs",
+            statistics: {
+              velocity: 2,
+              endurance: 7,
+              creationDate: 2046,
+            },
           },
-        },
-      ];
+        ],
+      };
 
       const action = {
         type: actionTypeRobots.loadRobots,
-        robots: robotsPayload,
+        robotsPayload: robotsPayload.robots,
       };
 
-      const expectedRobots = [...robotsPayload];
+      const expectedRobots = [...robotsPayload.robots];
 
       const newRobots = robotsReducer(currentRobots, action);
 

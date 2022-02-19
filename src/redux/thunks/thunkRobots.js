@@ -5,6 +5,7 @@ const apiUrl = process.env.REACT_APP_API_URL;
 export const loadRobotsThunk = async (dispatch) => {
   const response = await fetch(apiUrl);
   const receibedRobots = await response.json();
+  console.log(receibedRobots);
   dispatch(loadRobotsAction(receibedRobots.robots));
 };
 
@@ -19,6 +20,6 @@ export const createRobotThunk = (robot) => async (dispatch) => {
 
   if (response.ok) {
     const receibedRobot = await response.json();
-    dispatch(createRobotAction(receibedRobot));
+    dispatch(createRobotAction(receibedRobot.robots));
   }
 };
