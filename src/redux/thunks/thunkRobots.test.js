@@ -1,5 +1,5 @@
 import actionTypeRobots from "../actions/actionTypeRobots";
-import { loadRobotsThunk } from "./thunkRobots";
+import { createRobotThunk, loadRobotsThunk } from "./thunkRobots";
 
 describe("Given a loadRobotsThunk", () => {
   describe("When it is called and API response it's ok", () => {
@@ -37,58 +37,40 @@ describe("Given a loadRobotsThunk", () => {
       const mockDispatch = jest.fn();
       const expectedAction = {
         type: actionTypeRobots.loadRobots,
-        robots: robots,
+        robotsPayload: robots,
       };
 
       await loadRobotsThunk(mockDispatch);
 
-      expect(mockDispatch).toHaveBeenCalled();
+      expect(mockDispatch).toHaveBeenCalledWith(expectedAction);
     });
   });
 });
 
 describe("Given a creaRobotThunk", () => {
   describe("When it is called and API response it's ok", () => {
-    test("Then it should call dispatch passing a loadRobotsAtion", async () => {
-      const robots = [
-        {
-          name: "Robocop",
-          image: "iouhdfoiuhdfs",
-          statistics: {
-            velocity: 8,
-            endurance: 3,
-            creationDate: 2018,
-          },
+    test("Then it should call dispatch passing a createRobotAction", async () => {
+      const robot = {
+        name: "Robocop",
+        image: "iouhdfoiuhdfs",
+        statistics: {
+          velocity: 8,
+          endurance: 3,
+          creationDate: 2018,
         },
-        {
-          name: "Robofe",
-          image: "iouhfsefhdfs",
-          statistics: {
-            velocity: 2,
-            endurance: 7,
-            creationDate: 2046,
-          },
-        },
-        {
-          name: "Robofe",
-          image: "iouhfsefhdfs",
-          statistics: {
-            velocity: 2,
-            endurance: 7,
-            creationDate: 2046,
-          },
-        },
-      ];
-
+      };
       const mockDispatch = jest.fn();
+
       const expectedAction = {
-        type: actionTypeRobots.loadRobots,
-        robots: robots,
+        type: actionTypeRobots.createRobot,
+        robotPayload: robot,
       };
 
-      await loadRobotsThunk(mockDispatch);
+      const createThunk = createRobotThunk(robot);
 
-      expect(mockDispatch).toHaveBeenCalled();
+      await createThunk(mockDispatch);
+
+      expect(mockDispatch).toHaveBeenCalledWith(expectedAction);
     });
   });
 });

@@ -83,6 +83,7 @@ describe("Given a robotsReduce", () => {
       expect(newRobots).toEqual(expectedRobots);
     });
   });
+
   describe("When it called with 2 robots and an createRobotAction with a new robot", () => {
     test("Then it should return a new group of  the 3 robots", () => {
       const robotPayload = [
