@@ -12,10 +12,10 @@ function App() {
   const robots = useSelector((state) => {
     return state.robots;
   });
-  console.log(robots);
+
   return (
     <div className="App">
-      <h1></h1>
+      <h1>Robots</h1>
     </div>
   );
 }
