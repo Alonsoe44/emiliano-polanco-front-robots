@@ -26,6 +26,7 @@ describe("Given a robotsReduce", () => {
       },
     ];
   });
+
   describe("when it's called with no robots and no action", () => {
     test("Then it should return an empty array", () => {
       const expectedOutput = [];
@@ -35,6 +36,7 @@ describe("Given a robotsReduce", () => {
       expect(newRobots).toEqual(expectedOutput);
     });
   });
+
   describe("When it called with 2 robots and an loadaction with a payload of 3 robots", () => {
     test("Then it should return a new group of  the 3 robots of the payload", () => {
       const robotsPayload = [
@@ -73,6 +75,32 @@ describe("Given a robotsReduce", () => {
       };
 
       const expectedRobots = [...robotsPayload];
+
+      const newRobots = robotsReducer(currentRobots, action);
+
+      expect(newRobots).toEqual(expectedRobots);
+    });
+  });
+  describe("When it called with 2 robots and an createRobotAction with a new robot", () => {
+    test("Then it should return a new group of  the 3 robots", () => {
+      const robotPayload = [
+        {
+          name: "Robocop",
+          image: "iouhdfoiuhdfs",
+          statistics: {
+            velocity: 8,
+            endurance: 3,
+            creationDate: 2018,
+          },
+        },
+      ];
+
+      const action = {
+        type: actionTypeRobots.createRobot,
+        robotPayload: robotPayload,
+      };
+
+      const expectedRobots = [...currentRobots, robotPayload];
 
       const newRobots = robotsReducer(currentRobots, action);
 

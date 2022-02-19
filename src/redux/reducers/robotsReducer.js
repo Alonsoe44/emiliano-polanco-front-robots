@@ -5,7 +5,9 @@ const robotsReducer = (currentRobots = [], action = {}) => {
   switch (action.type) {
     case actionTypeRobots.loadRobots:
       newRobots = [...action.robots];
-      console.log(action.robots);
+      break;
+    case actionTypeRobots.createRobot:
+      newRobots = [...currentRobots, action.robotPayload];
       break;
     default:
       newRobots = [...currentRobots];

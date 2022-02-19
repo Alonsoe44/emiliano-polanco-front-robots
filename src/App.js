@@ -1,6 +1,5 @@
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { loadRobotsThunk } from "./redux/thunks/thunkRobots";
 
 function App() {
@@ -13,10 +12,10 @@ function App() {
   const robots = useSelector((state) => {
     return state.robots;
   });
-  console.log(robots);
+
   return (
     <div className="App">
-      <h1></h1>
+      <h1>Robots</h1>
     </div>
   );
 }
