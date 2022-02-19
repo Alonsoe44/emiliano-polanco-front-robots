@@ -1,5 +1,9 @@
 import actionTypeRobots from "./actionTypeRobots";
-import { createRobotAction, loadRobotsAction } from "./actionsCreator";
+import {
+  createRobotAction,
+  deleteRobotAction,
+  loadRobotsAction,
+} from "./actionsCreator";
 
 describe("Given an loadRobotsAction", () => {
   describe("When it receives a group robots", () => {
@@ -54,6 +58,23 @@ describe("Given an createRobotsAction", () => {
       };
 
       const createdAction = createRobotAction(robot);
+
+      expect(createdAction).toEqual(expectedAction);
+    });
+  });
+});
+
+describe("Given an deleteRobotAction", () => {
+  describe("When it receives an id of a robot", () => {
+    test("Then it should return an action with type deleteRobots and the id of the robot to delete", () => {
+      const id = 5;
+
+      const expectedAction = {
+        type: actionTypeRobots.deleteRobot,
+        idPayload: id,
+      };
+
+      const createdAction = deleteRobotAction(id);
 
       expect(createdAction).toEqual(expectedAction);
     });

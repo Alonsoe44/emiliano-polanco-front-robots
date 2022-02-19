@@ -53,6 +53,7 @@ const handlers = [
       })
     )
   ),
+  rest.delete(`${apiUrl}delete/:id`, (req, res, ctx) => res(ctx.status(200))),
 ];
 
 export default handlers;
