@@ -1,5 +1,5 @@
 import actionTypeRobots from "./actionTypeRobots";
-import { loadRobotsAction, a } from "./actionsCreator";
+import { loadRobotsAction } from "./actionsCreator";
 
 describe("Given an loadRobotsAction", () => {
   describe("When it receives a group robots", () => {

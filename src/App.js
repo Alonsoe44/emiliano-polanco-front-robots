@@ -13,10 +13,10 @@ function App() {
   const robots = useSelector((state) => {
     return state.robots;
   });
-
+  console.log(robots);
   return (
     <div className="App">
-      <h1>{robots}</h1>
+      <h1></h1>
     </div>
   );
 }
