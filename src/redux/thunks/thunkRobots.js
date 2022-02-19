@@ -5,7 +5,6 @@ const apiUrl = process.env.REACT_APP_API_URL;
 export const loadRobotsThunk = async (dispatch) => {
   const response = await fetch(apiUrl);
   const receibedRobots = await response.json();
-  console.log(receibedRobots);
   dispatch(loadRobotsAction(receibedRobots.robots));
 };
 

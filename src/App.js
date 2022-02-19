@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Robots I am a robot bip bip bup {robots}</h1>
+      <h1 robots={robots}>Robots I am a robot bip bip bup</h1>
     </div>
   );
 }
