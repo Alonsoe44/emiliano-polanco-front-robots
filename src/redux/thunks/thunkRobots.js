@@ -9,7 +9,7 @@ export const loadRobotsThunk = async (dispatch) => {
 };
 
 export const createRobotThunk = (robot) => async (dispatch) => {
-  const response = await fetch(apiUrl + "create", {
+  const response = await fetch(`${apiUrl}create`, {
     method: "POST",
     headers: {
       "content-type": "application/json",
@@ -19,6 +19,6 @@ export const createRobotThunk = (robot) => async (dispatch) => {
 
   if (response.ok) {
     const receibedRobot = await response.json();
-    dispatch(createRobotAction(receibedRobot.robots));
+    dispatch(createRobotAction(receibedRobot));
   }
 };
