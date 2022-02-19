@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { loadRobotsThunk } from "./redux/thunks/thunkRobots";
-
+import Caanvas from "./components/HomePage/Caanvas";
 function App() {
   const dispatch = useDispatch();
 
@@ -13,11 +13,7 @@ function App() {
     return state.robots;
   });
 
-  return (
-    <div className="App">
-      <h1 robots={robots}>Robots I am a robot bip bip bup</h1>
-    </div>
-  );
+  return <Caanvas robots={robots} />;
 }
 
 export default App;
