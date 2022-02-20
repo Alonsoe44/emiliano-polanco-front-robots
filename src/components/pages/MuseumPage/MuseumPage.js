@@ -17,7 +17,6 @@ const MuseumPage = () => {
     return state.robots;
   });
   const removeRobot = (id) => {
-    console.log("its working");
     dispatch(deleteRobotAction(id));
   };
 

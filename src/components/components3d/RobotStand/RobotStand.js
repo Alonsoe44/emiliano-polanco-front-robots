@@ -1,4 +1,4 @@
-import { useFrame, useLoader } from "@react-three/fiber";
+import { useLoader } from "@react-three/fiber";
 import Text3d from "../Text3d/text3d";
 import { TextureLoader } from "three/src/loaders/TextureLoader";
 import {
