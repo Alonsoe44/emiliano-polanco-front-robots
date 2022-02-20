@@ -17,10 +17,10 @@ const Caanvas = () => {
           </Scroll>
           <Scroll html>
             <h1 style={{ position: "absolute", top: "60vh", left: "0.5em" }}>
-              explore
+              we
             </h1>
             <h1 style={{ position: "absolute", top: "120vh", left: "60vw" }}>
-              the
+              are
             </h1>
             <h1
               style={{
