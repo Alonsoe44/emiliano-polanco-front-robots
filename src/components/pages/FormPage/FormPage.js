@@ -8,16 +8,16 @@ const FormPage = () => {
   const formik = useFormik({
     initialValues: {
       robotName: "",
-      url: "",
       velocity: "",
       endurance: "",
       date: "",
     },
-    onSubmit: ({ robotName, url, velocity, endurance, date }) => {
+    onSubmit: ({ robotName, velocity, endurance, date }) => {
       dispatch(
         createRobotThunk({
           name: robotName,
-          image: url,
+          image:
+            "https://i0.wp.com/hipertextual.com/wp-content/uploads/2020/12/daft-punk.jpg?fit=2500%2C1402&ssl=1",
           statistics: {
             velocity,
             endurance,
@@ -44,15 +44,6 @@ const FormPage = () => {
             value={formik.values.email}
             label="Robot Name"
             color="default"
-          />
-        </Grid>
-        <Grid>
-          <Input
-            id="url"
-            name="url"
-            label="Url"
-            type="url"
-            onChange={formik.handleChange}
           />
         </Grid>
 
@@ -85,6 +76,7 @@ const FormPage = () => {
             onChange={formik.handleChange}
           />
         </Grid>
+
         <Grid>
           <Button type="submit" color="success" auto>
             Submit
