@@ -17,6 +17,7 @@ function App() {
             <Route index element={<MuseumPage />} />
             <Route path="/robots/create" element={<FormPage />} />
           </Route>
+          <Route path="*" element={<MuseumPage />} />
         </Routes>
       </Suspense>
     </>
