@@ -6,13 +6,16 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import store from "./redux/store/store";
 import { BrowserRouter } from "react-router-dom";
+import { NextUIProvider } from "@nextui-org/react";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <NextUIProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </NextUIProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

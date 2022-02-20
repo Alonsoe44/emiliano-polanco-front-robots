@@ -16,13 +16,20 @@ const Caanvas = () => {
             <Images />
           </Scroll>
           <Scroll html>
-            <h1 style={{ position: "absolute", top: "60vh", left: "0.5em" }}>
+            <h1
+              className="robo-title"
+              style={{ position: "absolute", top: "60vh", left: "0.5em" }}
+            >
               we
             </h1>
-            <h1 style={{ position: "absolute", top: "120vh", left: "60vw" }}>
+            <h1
+              className="robo-title"
+              style={{ position: "absolute", top: "120vh", left: "60vw" }}
+            >
               are
             </h1>
             <h1
+              className="robo-title"
               style={{
                 position: "absolute",
                 top: "198.5vh",
