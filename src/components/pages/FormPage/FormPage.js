@@ -2,8 +2,10 @@ import { Button, Grid, Input } from "@nextui-org/react";
 import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import { createRobotThunk } from "../../../redux/thunks/thunkRobots";
+import { useNavigate } from "react-router-dom";
 
 const FormPage = () => {
+  let navigate = useNavigate();
   const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
@@ -13,6 +15,7 @@ const FormPage = () => {
       date: "",
     },
     onSubmit: ({ robotName, velocity, endurance, date }) => {
+      navigate("/toMuseum");
       dispatch(
         createRobotThunk({
           name: robotName,
