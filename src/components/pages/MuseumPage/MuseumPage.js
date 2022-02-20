@@ -2,8 +2,10 @@ import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteRobotAction } from "../../../redux/actions/actionsCreator";
-import { loadRobotsThunk } from "../../../redux/thunks/thunkRobots";
+import {
+  deleteRobotThunk,
+  loadRobotsThunk,
+} from "../../../redux/thunks/thunkRobots";
 import RobotStand from "../../components3d/RobotStand/RobotStand";
 
 const MuseumPage = () => {
@@ -17,7 +19,7 @@ const MuseumPage = () => {
     return state.robots;
   });
   const removeRobot = (id) => {
-    dispatch(deleteRobotAction(id));
+    dispatch(deleteRobotThunk(id));
   };
 
   return (
