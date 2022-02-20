@@ -5,25 +5,16 @@ import {
   textOptionsNormal,
   textOptionsTitle,
 } from "../../../three-utils/textconfig";
-import { useRef } from "react";
+import SphereRobot from "../SphereRobot/SphereRobot";
+import DeleteSphere from "../DeleteSphere/DeleteSphere";
 
-const RobotStand = ({ robot, positionStand }) => {
+const RobotStand = ({ robot, positionStand, deleteFunc }) => {
   const userTexture = useLoader(TextureLoader, robot.image);
   const [x, y, z] = positionStand;
-  const sphere = useRef();
-
-  useFrame(({ clock }) => {
-    const time = clock.getElapsedTime() / 4;
-    sphere.current.rotation.z = time;
-    sphere.current.rotation.x = time;
-  });
 
   return (
     <>
-      <mesh ref={sphere} position={[x, y + 3, z]} scale={2.5}>
-        <sphereGeometry />
-        <meshBasicMaterial map={userTexture} />
-      </mesh>
+      <SphereRobot position={[x, y + 3, z]} texture={userTexture} />
       <Text3d
         text={robot.name}
         textOption={textOptionsTitle}
@@ -44,6 +35,11 @@ const RobotStand = ({ robot, positionStand }) => {
         textOption={textOptionsNormal}
         positionStand={[x - 2, y - 3.6, z]}
       ></Text3d>
+      <DeleteSphere
+        position={[x + 2, y - 4, z]}
+        deleteFunc={deleteFunc}
+        idRobot={robot._id}
+      />
     </>
   );
 };
