@@ -17,7 +17,7 @@ body {
   overscroll-behavior: none;
 }
 
-h1 {
+.robo-title {
   font-size: 20em;
   font-weight: 400;
   letter-spacing: -0.05em;
@@ -27,7 +27,7 @@ h1 {
   color: #c0df85;
 }
 
-a {
+.navegation__text {
   pointer-events: all;
   color: black;
   text-decoration: none;
