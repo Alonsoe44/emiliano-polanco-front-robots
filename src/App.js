@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <NavegationBar />
+      <NavegationBar robots={robots} />
       <Routes>
         <Route path="/" element={<Navigate to="/home" />}></Route>
         <Route path="home" element={<Caanvas />} />
