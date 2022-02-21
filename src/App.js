@@ -8,7 +8,8 @@ import FormPage from "./components/pages/FormPage/FormPage";
 function App() {
   return (
     <>
-      <Suspense fallback={<h1>Loading... </h1>}>
+      <Suspense fallback={<h1 className="robo-title">
+			Loading... </h1>}>
         <NavegationBar />
         <Routes>
           <Route path="/" element={<Navigate to="/home" />}></Route>
